@@ -25,7 +25,7 @@
     $('#inputData').click(()=>{
       let idSpreadsheet = $('#idSpreadsheet').val()
       let sheetName = $('#sheetName').val()
-      let arr_data = getValue(idSpreadsheet,sheetName)
+      let arr_data = await getValue(idSpreadsheet,sheetName)
       console.log(arr_data)
       arr_data.forEach((element,key) => {
         let text = element.join(',')
