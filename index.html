@@ -34,7 +34,7 @@
       }
     
       for (let index in obj_data) {
-        let data = await `request${index}`.then(response => { return response.result.values })
+        let data = await obj_data[index].then(response => { return response.result.values })
         data.forEach(value => {
           let text = value.join()
           $('#value').append(`<p>${text}</p>`)
