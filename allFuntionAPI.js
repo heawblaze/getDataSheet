@@ -1,10 +1,5 @@
 
-async function getValue(sheetID, sheetName = 'Sheet1') {
-
-    return makeApiCall(sheetID, sheetName)
-
-}
-function makeApiCall(spreadsheetId, range = 'Sheet1') {
+async function getValue(spreadsheetId, range = 'Sheet1') {
     var params = {
         // The ID of the spreadsheet to retrieve data from.
         spreadsheetId: spreadsheetId,  // TODO: Update placeholder value.
