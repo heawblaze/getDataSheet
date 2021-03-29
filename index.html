@@ -27,7 +27,12 @@
       let sheetName = $('#sheetName').val()
       let arr_data = getValue(idSpreadsheet,sheetName)
       console.log(arr_data)
-      $('#value').append(`<p>${arr_data}</p>`)
+      arr_data.forEach((element,key) => {
+        let text = element.join(',')
+        $('#value').append(`<p>${text}</p>`)
+       
+      });
+      
     })
   </script>
 </body>
