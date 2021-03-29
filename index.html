@@ -15,8 +15,10 @@
   <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
   <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
   <br>
-  <input id="idSpreadsheet" placeholder="ID Spreadsheet" type="text">
-  <input id="sheetName" placeholder="Tab Sheet Name" type="text" value="Sheet1">
+  <input id="idSpreadsheet1" placeholder="ID Spreadsheet" type="text">
+  <input id="sheetName1" placeholder="Tab Sheet Name" type="text" value="Sheet1"><br>
+  <input id="idSpreadsheet2" placeholder="ID Spreadsheet" type="text">
+  <input id="sheetName2" placeholder="Tab Sheet Name" type="text" value="Sheet1">
   <button id="inputData"> Console Data </button>
   <br>
   <div id="value"></div>
@@ -25,11 +27,24 @@
     $('#inputData').click(async () => {
 
 
-      let idSpreadsheet = $('#idSpreadsheet').val()
-      let sheetName = $('#sheetName').val()
-      let request = getValue(idSpreadsheet, sheetName)
+      let idSpreadsheet = $('#idSpreadsheet1').val()
+      let sheetName = $('#sheetName1').val()
+      let request1 = getValue(idSpreadsheet, sheetName)
 
-      request.then(function (response) {
+      let idSpreadsheet = $('#idSpreadsheet2').val()
+      let sheetName = $('#sheetName2').val()
+      let request2 = getValue(idSpreadsheet, sheetName)
+
+      request1.then(function (response) {
+        console.log(response.result.values);
+        let arr_data = response.result.values
+        return arr_data
+
+      }, function (reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+      
+      request2.then(function (response) {
         console.log(response.result.values);
         let arr_data = response.result.values
         return arr_data
