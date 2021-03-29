@@ -19,6 +19,7 @@ async function getValue(spreadsheetId, range = 'Sheet1') {
     };
 
     var request = await gapi.client.sheets.spreadsheets.values.get(params);
+    console.log(spreadsheetId)
     return request
 }
 

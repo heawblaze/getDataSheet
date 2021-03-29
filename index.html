@@ -25,37 +25,39 @@
 
   <script>
     $('#inputData').click(async () => {
-
-
-      let idSpreadsheet1 = $('#idSpreadsheet1').val()
-      let sheetName1 = $('#sheetName1').val()
-      let request1 = getValue(idSpreadsheet1, sheetName1)
-
-      let idSpreadsheet2 = $('#idSpreadsheet2').val()
-      let sheetName2 = $('#sheetName2').val()
-      let request2 = getValue(idSpreadsheet2, sheetName2)
-
-      request1.then(function (response) {
-        console.log(response.result.values);
-        let arr_data = response.result.values
-        return arr_data
-
-      }, function (reason) {
-        console.error('error: ' + reason.result.error.message);
-      });
-
-      request2.then(function (response) {
-        console.log(response.result.values);
-        let arr_data = response.result.values
-        return arr_data
-
-      }, function (reason) {
-        console.error('error: ' + reason.result.error.message);
-      });
-
-
+      let request1 = getValue('1nW3aJsoJnjnS8otBT8WwyFTxm_JN4UmX-Zpk5ynWDns')
+      let request1 = getValue('1P8thlhIsqv5_VXWQQbkWT7QJg_lMVLg2pwBB1vTNC4g')
+      let request1 = getValue('1X3XTUl_gVGTYoR9zxGgc_cFyX_OTfrugld7RoI03bzA')
+      let request1 = getValue('11sAtDqBFu_-Eb5KI7-plVu1hAhTytgPygIH2XYJwnMI')
 
     })
+
+
+    let idSpreadsheet1 = $('#idSpreadsheet1').val()
+    let sheetName1 = $('#sheetName1').val()
+    let request1 = getValue(idSpreadsheet1, sheetName1)
+
+    let idSpreadsheet2 = $('#idSpreadsheet2').val()
+    let sheetName2 = $('#sheetName2').val()
+    let request2 = getValue(idSpreadsheet2, sheetName2)
+
+    request1.then(function (response) {
+      console.log(response.result.values);
+      let arr_data = response.result.values
+      return arr_data
+
+    }, function (reason) {
+      console.error('error: ' + reason.result.error.message);
+    });
+
+    request2.then(function (response) {
+      console.log(response.result.values);
+      let arr_data = response.result.values
+      return arr_data
+
+    }, function (reason) {
+      console.error('error: ' + reason.result.error.message);
+    });
   </script>
 </body>
 
