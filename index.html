@@ -30,34 +30,39 @@
       let request3 = getValue('1X3XTUl_gVGTYoR9zxGgc_cFyX_OTfrugld7RoI03bzA')
       let request4 = getValue('11sAtDqBFu_-Eb5KI7-plVu1hAhTytgPygIH2XYJwnMI')
 
+      result1 = await request1.then( response => { console.log(response.result.values)})
+      result2 = await request2.then( response => { console.log(response.result.values)})
+      result3 = await request3.then( response => { console.log(response.result.values)})
+      result4 = await request4.then( response => { console.log(response.result.values)})
+
     })
 
-/*
-    let idSpreadsheet1 = $('#idSpreadsheet1').val()
-    let sheetName1 = $('#sheetName1').val()
-    let request1 = getValue(idSpreadsheet1, sheetName1)
-
-    let idSpreadsheet2 = $('#idSpreadsheet2').val()
-    let sheetName2 = $('#sheetName2').val()
-    let request2 = getValue(idSpreadsheet2, sheetName2)
-
-    request1.then(function (response) {
-      console.log(response.result.values);
-      let arr_data = response.result.values
-      return arr_data
-
-    }, function (reason) {
-      console.error('error: ' + reason.result.error.message);
-    });
-
-    request2.then(function (response) {
-      console.log(response.result.values);
-      let arr_data = response.result.values
-      return arr_data
-
-    }, function (reason) {
-      console.error('error: ' + reason.result.error.message);
-    });*/
+    /*
+        let idSpreadsheet1 = $('#idSpreadsheet1').val()
+        let sheetName1 = $('#sheetName1').val()
+        let request1 = getValue(idSpreadsheet1, sheetName1)
+    
+        let idSpreadsheet2 = $('#idSpreadsheet2').val()
+        let sheetName2 = $('#sheetName2').val()
+        let request2 = getValue(idSpreadsheet2, sheetName2)
+    
+        request1.then(function (response) {
+          console.log(response.result.values);
+          let arr_data = response.result.values
+          return arr_data
+    
+        }, function (reason) {
+          console.error('error: ' + reason.result.error.message);
+        });
+    
+        request2.then(function (response) {
+          console.log(response.result.values);
+          let arr_data = response.result.values
+          return arr_data
+    
+        }, function (reason) {
+          console.error('error: ' + reason.result.error.message);
+        });*/
   </script>
 </body>
 
