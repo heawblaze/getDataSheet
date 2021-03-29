@@ -24,18 +24,20 @@
   <script>
     $('#inputData').click(async () => {
 
-       
-        let idSpreadsheet = $('#idSpreadsheet').val()
-        let sheetName = $('#sheetName').val()
-        let arr_data = getValue(idSpreadsheet, sheetName)
-        let result = await arr_data
-        console.log(result)
-        result.forEach((element, key) => {
-          let text = element.join(',')
-          $('#value').append(`<p>${text}</p>`)
 
-        });
-      
+      let idSpreadsheet = $('#idSpreadsheet').val()
+      let sheetName = $('#sheetName').val()
+      let request = getValue(idSpreadsheet, sheetName)
+
+      request.then(function (response) {
+        console.log(response.result.values);
+        let arr_data = response.result.values
+        return arr_data
+
+      }, function (reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+
 
 
     })
