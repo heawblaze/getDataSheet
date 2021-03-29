@@ -30,10 +30,14 @@
       let request3 = getValue('1X3XTUl_gVGTYoR9zxGgc_cFyX_OTfrugld7RoI03bzA')
       let request4 = getValue('11sAtDqBFu_-Eb5KI7-plVu1hAhTytgPygIH2XYJwnMI')
 
-      result1 = await request1.then( response => { console.log(response.result.values)})
-      result2 = await request2.then( response => { console.log(response.result.values)})
-      result3 = await request3.then( response => { console.log(response.result.values)})
-      result4 = await request4.then( response => { console.log(response.result.values)})
+      result1 = await request1.then( response => { return response.result.values})
+      result2 = await request2.then( response => { return response.result.values})
+      result3 = await request3.then( response => { return response.result.values})
+      result4 = await request4.then( response => { return response.result.values})
+      let arr_data = new Object()
+      for(let index = 1 ; index <= 4 ; index++){
+        console.log([`result${index}`])
+      }
 
     })
 
