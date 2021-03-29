@@ -1,4 +1,3 @@
-import * as gapi from "https://apis.google.com/js/api.js"
 
 async function getValue(sheetID, sheetName = 'Sheet1') {
 
