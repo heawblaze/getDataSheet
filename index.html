@@ -27,12 +27,12 @@
     $('#inputData').click(async () => {
 
 
-      let idSpreadsheet = $('#idSpreadsheet1').val()
-      let sheetName = $('#sheetName1').val()
+      let idSpreadsheet1 = $('#idSpreadsheet1').val()
+      let sheetName1 = $('#sheetName1').val()
       let request1 = getValue(idSpreadsheet, sheetName)
 
-      let idSpreadsheet = $('#idSpreadsheet2').val()
-      let sheetName = $('#sheetName2').val()
+      let idSpreadsheet2 = $('#idSpreadsheet2').val()
+      let sheetName2 = $('#sheetName2').val()
       let request2 = getValue(idSpreadsheet, sheetName)
 
       request1.then(function (response) {
@@ -43,7 +43,7 @@
       }, function (reason) {
         console.error('error: ' + reason.result.error.message);
       });
-      
+
       request2.then(function (response) {
         console.log(response.result.values);
         let arr_data = response.result.values
