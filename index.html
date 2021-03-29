@@ -1,14 +1,14 @@
 <html>
 
 <head>
-    <script src="https://www.thaipet.co.th/bootstrap/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="https://www.thaipet.co.th/bootstrap/bootstrap.min.css">
-    <script src="https://www.thaipet.co.th/bootstrap/bootstrap.min.js"></script>
+  <script src="https://www.thaipet.co.th/bootstrap/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="https://www.thaipet.co.th/bootstrap/bootstrap.min.css">
+  <script src="https://www.thaipet.co.th/bootstrap/bootstrap.min.js"></script>
 </head>
 
 <body>
   <script src="allFuntionAPI.js"></script>
-  
+
   <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
@@ -17,22 +17,27 @@
   <br>
   <input id="idSpreadsheet" placeholder="ID Spreadsheet" type="text">
   <input id="sheetName" placeholder="Tab Sheet Name" type="text" value="Sheet1">
-  <button id="inputData" > Console Data </button>
+  <button id="inputData"> Console Data </button>
   <br>
   <div id="value"></div>
 
   <script>
-    $('#inputData').click(()=>{
-      let idSpreadsheet = $('#idSpreadsheet').val()
-      let sheetName = $('#sheetName').val()
-      let arr_data = await getValue(idSpreadsheet,sheetName)
-      console.log(arr_data)
-      arr_data.forEach((element,key) => {
-        let text = element.join(',')
-        $('#value').append(`<p>${text}</p>`)
+    $('#inputData').click(async () => {
+
        
-      });
+        let idSpreadsheet = $('#idSpreadsheet').val()
+        let sheetName = $('#sheetName').val()
+        let arr_data = getValue(idSpreadsheet, sheetName)
+        let result = await arr_data
+        console.log(result)
+        result.forEach((element, key) => {
+          let text = element.join(',')
+          $('#value').append(`<p>${text}</p>`)
+
+        });
       
+
+
     })
   </script>
 </body>

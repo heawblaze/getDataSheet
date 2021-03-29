@@ -18,11 +18,11 @@ async function getValue(spreadsheetId, range = 'Sheet1') {
         //dateTimeRenderOption: '',  // TODO: Update placeholder value.
     };
 
-    var request = gapi.client.sheets.spreadsheets.values.get(params);
+    var request = await gapi.client.sheets.spreadsheets.values.get(params);
     request.then(function (response) {
         // TODO: Change code below to process the `response` object:
         console.log(response.result.values);
-        let arr_data = response.result.values
+        let arr_data =  response.result.values
         return arr_data
 
     }, function (reason) {
