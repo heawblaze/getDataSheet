@@ -34,11 +34,13 @@
           console.log(res.result.values)
         }, async reason => {
           console.log(reason.result.error)
-          $(handleSignInClick())
-          let request1 = getValue('15l6W7khxgvzb16HPeV66fjKfRuVZAgB0unCwMCldiSE', 'Product Data')
-          let result1 = await request1.then(res => {
-            console.log(res.result.values)
+          $(handleSignInClick()).then(function () {
+            let request1 = getValue('15l6W7khxgvzb16HPeV66fjKfRuVZAgB0unCwMCldiSE', 'Product Data')
+            let result1 = await request1.then(res => {
+              console.log(res.result.values)
+            })
           })
+
         })
       }, 2000);
 
