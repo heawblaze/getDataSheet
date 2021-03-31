@@ -7,9 +7,11 @@
 </head>
 
 <body>
-  <script src="allFuntionAPI.js"></script>
+  <!--<script src="../../JS/allFuntionAPI.js"></script>-->
+  <script src="../../JS/tpi_function.js"></script>
 
-  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+  <script async defer src="https://apis.google.com/js/api.js"
+    onload="this.onload=function(){};handleClientLoad();dataEdit()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
   <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
@@ -24,7 +26,34 @@
   <div id="value"></div>
 
   <script>
+    async function dataEdit() {
+      console.log('Success')
+      setTimeout(async () => {
+        let request1 = getValue('15l6W7khxgvzb16HPeV66fjKfRuVZAgB0unCwMCldiSE', 'Product Data')
+        let result1 = await request1.then(res => {
+          console.log(res.result.values)
+        }, async reason => {
+          console.log(reason.result.error)
+          $(handleSignInClick())
+          let request1 = getValue('15l6W7khxgvzb16HPeV66fjKfRuVZAgB0unCwMCldiSE', 'Product Data')
+          let result1 = await request1.then(res => {
+            console.log(res.result.values)
+          })
+        })
+      }, 2000);
+
+    }
     $('#inputData').click(async () => {
+      console.log(1)
+      /*let request = getValue(idSheet,SheetName)
+      let request2 = getValue(idSheet,SheetName)
+      let request3 = getValue(idSheet,SheetName)
+
+
+      result1 = await request1.then( response => { return response.result.values})
+      result2 = await request2.then( response => { return response.result.values})
+      result3 = await request3.then( response => { return response.result.values})
+*/
       let obj_data = new Object()
 
       let arr_sheetID = ['1nW3aJsoJnjnS8otBT8WwyFTxm_JN4UmX-Zpk5ynWDns', '1P8thlhIsqv5_VXWQQbkWT7QJg_lMVLg2pwBB1vTNC4g', '1X3XTUl_gVGTYoR9zxGgc_cFyX_OTfrugld7RoI03bzA', '11sAtDqBFu_-Eb5KI7-plVu1hAhTytgPygIH2XYJwnMI']
@@ -32,7 +61,7 @@
       for (let indexSheet in arr_sheetID) {
         obj_data[indexSheet] = getValue(arr_sheetID[indexSheet])
       }
-    
+
       for (let index in obj_data) {
         let data = await obj_data[index].then(response => { return response.result.values })
         data.forEach(value => {

@@ -47,14 +47,11 @@ function initClient() {
 }
 
 function handleClientLoad() {
-    gapi.load('client:auth2', initClient);
+     gapi.load('client:auth2', initClient);
 }
 
 function updateSignInStatus(isSignedIn) {
-    if (isSignedIn) {
-        //makeApiCall();
-        getValue();
-    }
+
 }
 
 function handleSignInClick(event) {
